@@ -6,7 +6,7 @@ fastify.register(require('@fastify/static'), {
   prefix: '/public/',
 })
 
-const LIFF_ID = "xxxxxxx";
+const LIFF_ID = "xxxx";
 
 fastify.register(require("@fastify/view"), {
   engine: {
@@ -17,21 +17,22 @@ fastify.register(require("@fastify/view"), {
 
 fastify.get('/', function handler(request, reply) {
   const query = request.query;
-  const state = query['liff.state'];
+  const state = query['liff.state'];// ?liff.state=/welcome
 
   console.log(state);
 
-  if (state_url === '/register') {
-    reply.view('register', { LIFF_ID })
-  } else if (state_url === '/history') {
-    reply.view('history', { LIFF_ID })
+  if (state === '/register') {
+    reply.redirect('/register')
+  } else if (state === '/history') {
+    reply.redirect('/history')
   } else {
-    reply.view('welcome', { LIFF_ID })
+    reply.redirect('/welcome')
   }
+
 })
 
 fastify.get('/welcome', function handler(request, reply) {
-  reply.view('welcome', { LIFF_ID });
+  reply.view('welcome', { "LIFF_ID": LIFF_ID });
 })
 
 fastify.get('/register', function handler(request, reply) {
