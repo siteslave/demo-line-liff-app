@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="theme-color" content="#06c755">
+  <meta http-equiv="Content-Security-Policy" content="default-src * 'self' 'unsafe-inline' 'unsafe-eval' data:">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap" rel="stylesheet">
+
+  <title>Welcome</title>
+
+  <link rel="stylesheet" href="https://unpkg.com/framework7/framework7-bundle.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/framework7-icons@5.0.5/css/framework7-icons.css">
+  <link rel="stylesheet" href="./public/css/style.css">
+</head>
+
+<body>
+
+  <div id="app">
+    <div class="view view-main">
+      <div data-name="home" class="page">
+        <div class="page-content">
+          <div class="card">
+            <div class="card-header">สวัสดี</div>
+            <div class="card-content card-content-padding">
+              <p>
+                <span id="displayName">xxx</span>
+              </p>
+              <p>
+                <span id="userId">xxx</span>
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <input type="hidden" id="txt_liff_id" value="<%= LIFF_ID %>">
+
+  <script src="https://unpkg.com/framework7/framework7-bundle.min.js"></script>
+  <script charset="utf-8" src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
+  <script charset="utf-8" src="./public/welcome.js"></script>
+</body>
+
+</html>
